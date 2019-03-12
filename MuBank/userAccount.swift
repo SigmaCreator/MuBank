@@ -14,6 +14,8 @@ struct MuUser {
     var monthlyIncome: Int
     var password: String
     
+    var invoice: Double
+    
     
     func configureMuAccount(){
         for _ in 0..<15{
