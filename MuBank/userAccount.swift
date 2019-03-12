@@ -89,6 +89,6 @@ func upperMenu(){
     print("         Account: \(myUser.account)    ")
 }
 
-var myUser = MuUser(usarname: "Anderson", email: "aaa.com", bankNumber: 323, agency: 1111, account: 72849, monthlyIncome: 1100, password: "senha")
+var myUser = MuUser(usarname: "Anderson", email: "aaa.com", bankNumber: 323, agency: 1111, account: 72849, monthlyIncome: 1100, password: "senha", invoice: 10.2)
 
 
