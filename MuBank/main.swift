@@ -8,6 +8,21 @@
 
 import Foundation
 
+func deposit() {
+    
+    print("===================================================")
+    print("||                                               ||")
+    print("||             Choose deposit method             ||")
+    print("||                                               ||")
+    print("|| (1) * [Invoicing]                               ||")
+    print("|| (2) * [Transfer]                              ||")
+    print("|| (3) * [Adjust credit limit]                   ||")
+    print("|| (4) * [Pay]                                   ||")
+    print("||                                               ||")
+    print("===================================================")
+    
+}
+
 func startScreen() {
     
     print("===================================================")
