@@ -8,3 +8,8 @@
 
 import Foundation
 
+print("===============================================")
+print("|| Welcome to your MuBank, John Appleseed 👋 ||")
+print("Current Invoice: \(cebola)")
+print("===============================================")
+
