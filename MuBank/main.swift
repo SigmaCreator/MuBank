@@ -55,13 +55,21 @@ func deposit() {
 
 func transfer() {
 
+    myUser.configureMuAccount()
 }
 
-func adjustLimit() {}
+func adjustLimit() {
+    
+    myUser.configureCard()
+}
 
-func pay() {}
+func pay() {
+    myUser.configureApp()
+}
 
 func startScreen() {
+    
+    upperMenu()
     
     print("===================================================")
     print("||   Welcome to your MuBank, John Appleseed 👋   ||")
