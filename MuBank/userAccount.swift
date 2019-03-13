@@ -1,24 +1,46 @@
 import Foundation
 
 
-
-
-struct MuUser {
+class GenericAccount {
     
     let bankNumber: Int
-
     let username: String
-    let email: String
     let agency: String
     let account: String
-    let points: Int
     
-    var monthlyIncome: Int
+    init(bankNumber: Int, username: String, agency: String, account: String) {
+        
+        self.bankNumber = bankNumber
+        self.username = username
+        self.agency = agency
+        self.account = account
+        
+    }
+    
+}
+
+
+class MuAccount : GenericAccount {
+    
+    let email: String
     var password: String
+    var monthlyIncome: Int
     
-    var currentInvoice: Double
-    var funds: Double
+    let points = 0
+    var currentInvoice = 0.0
+    var funds = 0.0
     
+    var friendAccounts: Array<GenericAccount> = []
+    
+    init(bankNumber: Int, username: String, agency: String, account: String, email: String, password: String, monthlyIncome: Int) {
+        
+        self.email = email
+        self.password = password
+        self.monthlyIncome = monthlyIncome
+        
+        super.init(bankNumber: bankNumber, username: username, agency: agency, account: account)
+        
+    }
     
     func configureMuAccount(){
         
@@ -87,6 +109,6 @@ func upperMenu(){
     
 }
 
-var myUser = MuUser(bankNumber: 261, username: "Anderson", email: "aaa.com", agency: "0002", account: "72849", points: 320, monthlyIncome: 1100, password: "senha", currentInvoice: 10.2, funds: 100.0)
+var myUser = MuAccount(bankNumber: 261, username: "Anderson", agency: "0002", account: "72849", email: "aaa.com",  password: "senha", monthlyIncome: 1100)
 
 
