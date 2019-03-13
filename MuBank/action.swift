@@ -382,8 +382,11 @@ func payOtherInvoice() {
             print("||                                               ||")
             print("||             Not enough funds 😭               ||")
             print("||                                               ||")
+            print("|| Press enter to return                         ||")
             print("===================================================")
+            let _ = readLine()
             
+            //pay()
         } else {
             
             myUser.funds -= amount
@@ -392,7 +395,10 @@ func payOtherInvoice() {
             print("||                                               ||")
             print("||             ✅ Payment complete! ✅           ||")
             print("||                                               ||")
+            print("|| Press enter to return                         ||")
             print("===================================================")
+           // pay()
+            let _ = readLine()
             
         }
 
@@ -405,7 +411,8 @@ func payOtherInvoice() {
 }
 
 func pay() {
-
+    var flag = true
+    while (flag == true){
     print("===================================================")
     print("||                                               ||")
     print("||             Choose payment option             ||")
@@ -413,10 +420,12 @@ func pay() {
     print("|| (1) * [Pay credit card invoice]               ||")
     print("|| (2) * [Pay other invoice]                     ||")
     print("||                                               ||")
+    print("||       Press enter to return                   ||") 
     print("===================================================")
     
     let response = Int(readLine() ?? "-1")
     
+
     switch(response) {
     case 1:
         
@@ -426,10 +435,10 @@ func pay() {
         
         payOtherInvoice()
         
-    default: break
+    default: flag = false
     
     }
     
-    print("Press enter to return") ; let _ = readLine()
     
+    }
 }
