@@ -230,13 +230,14 @@ func increaseLimit(){
     
     let actualLimit = 350
     let response = Int(readLine() ?? "-1")
+    let moneyAvailable = 210 + (response! -  400)
     
     print("===================================================")
     print("||               Limit adjust                    ||")
     print("||                                               ||")
     print("||                                               ||")
     print("||                 $\(actualLimit),00                       ||")
-    print("||               $210,50 available               ||")
+    print("||               $\(moneyAvailable),50 available               ||")
     print("||                                               ||")
     print("||                                               ||")
     traceAjust(newValor: response, actualLimit: actualLimit)
@@ -246,6 +247,8 @@ func increaseLimit(){
     print("||                                               ||")
     print("||   2.              Adjust           >          ||")
     print("===================================================")
+
+    
 }
 
 func traceAjust(newValor: Int?, actualLimit: Int) {
