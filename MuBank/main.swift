@@ -29,6 +29,7 @@ func startScreen() {
     
     let response = Int(readLine() ?? "-1")
     
+    adjustLimit()
     switch(response) {
         
     case 1:
