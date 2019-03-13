@@ -5,16 +5,19 @@ import Foundation
 
 struct MuUser {
     
-    let usarname: String
-    let email: String
     let bankNumber: Int
-    let agency: Int
-    let account: Int
+
+    let username: String
+    let email: String
+    let agency: String
+    let account: String
+    let points: Int
     
     var monthlyIncome: Int
     var password: String
     
-    var invoice: Double
+    var currentInvoice: Double
+    var funds: Double
     
     
     func configureMuAccount(){
@@ -84,6 +87,6 @@ func upperMenu(){
     
 }
 
-var myUser = MuUser(usarname: "Anderson", email: "aaa.com", bankNumber: 323, agency: 1111, account: 72849, monthlyIncome: 1100, password: "senha", invoice: 10.2)
+var myUser = MuUser(bankNumber: 261, username: "Anderson", email: "aaa.com", agency: "0002", account: "72849", points: 320, monthlyIncome: 1100, password: "senha", currentInvoice: 10.2, funds: 100.0)
 
 

@@ -74,7 +74,7 @@ func startScreen() {
     print("===================================================")
     print("||   Welcome to your MuBank, John Appleseed 👋   ||")
     print("|| ############################################# ||")
-    print("|| Invoice: \(myUser.invoice) Funds: - Points:   ||")
+    print("|| Invoice: \(myUser.currentInvoice) - Funds: \(myUser.funds) - Points: \(myUser.points)  ||")
     print("===================================================")
     print("||                                               ||")
     print("||     Type the number of the desired action     ||")
