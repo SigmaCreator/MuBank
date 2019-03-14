@@ -30,7 +30,7 @@ class MuAccount : GenericAccount {
     var currentInvoice = 0.0
     var funds = 0.0
     
-    var friendAccounts: Array<GenericAccount> = []
+    var friendAccounts: [GenericAccount] = []
     
     init(bankNumber: Int, username: String, agency: String, account: String, email: String, password: String, monthlyIncome: Int) {
         
@@ -90,22 +90,6 @@ class MuAccount : GenericAccount {
         
     }
     
-    
-}
-
-
-func upperMenu(){
-    
-    print("          ---------------")
-    print("          |  -|||- _ | -_|")
-    print("          | _-|- -|| _-|-|")
-    print("          | ||- -_-| -| _|")
-    print("          | ----| || - | |")
-    print("          ---------------")
-    
-    print("Bank \(myUser.bankNumber) -  Mu payments S.A.")
-    print("          Agency: \(myUser.agency)    ")
-    print("         Account: \(myUser.account)    ")
     
 }
 

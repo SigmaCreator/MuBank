@@ -8,50 +8,63 @@
 
 import Foundation
 
+// A-OK!
 func deposit() {
     
-    print("===================================================")
-    print("||                                               ||")
-    print("||             Choose deposit method             ||")
-    print("||                                               ||")
-    print("|| (1) * [Invoicing]                             ||")
-    print("|| (2) * [Bank transfer]                         ||")
-    print("||                                               ||")
-    print("===================================================")
+    var terminate = false
     
-    let response = Int(readLine() ?? "-1")
+    while !terminate  {
     
-    switch(response) {
+        print("===================================================")
+        print("||                                               ||")
+        print("||             Choose deposit method             ||")
+        print("||                                               ||")
+        print("|| (1) * [Invoicing]                             ||")
+        print("|| (2) * [Bank transfer]                         ||")
+        print("||                                               ||")
+        print("||             Press enter to return             ||")
+        print("===================================================")
         
-    case 1:
+        let response = Int(readLine() ?? "-1")
         
-        print(" * Enter deposit amount")
-        
-        if let amount = Double(readLine() ?? "-1") {
+        switch response {
             
-            print("Amount: \(amount) - Invoice bar code: 32549328464390348052324")
+        case 1:
+            
+            print("===================================================")
+            print("|| Enter deposit amount:                         ||")
+            
+            let amount = Double(readLine() ?? "-1") ?? 0.0
+                
+            print("|| Amount: \(amount)                             ||")
+            print("|| Invoice bar code: 32549328464390348052324     ||")
+            
             myUser.funds += amount
             
+            print("||                                               ||")
+            print("||             Press enter to return             ||")
+            print("===================================================")
+            
+            let _ = readLine()
+            
+            
+        case 2:
+            
+            print("===================================================")
+            print("||               Your MuAccount                  ||")
+            print("||                Agency: \(myUser.agency)                   ||")
+            print("||               Account: \(myUser.account)                  ||")
+            print("||            Bank: Mu Payments S.A.             ||")
+            print("||                                               ||")
+            print("||             Press enter to return             ||")
+            print("===================================================")
+            
+            let _ = readLine()
+            
+            
+        default: terminate = true
+            
         }
-        
-        print("Press enter to return") ; let _ = readLine()
-        
-        
-    case 2:
-        
-        print("===================================================")
-        print("||                Your MuAccount                 ||")
-        print("||                 Agency: \(myUser.agency)                  ||")
-        print("||                Account: \(myUser.account)                 ||")
-        print("||             Bank: Mu Payments S.A.            ||")
-        print("===================================================")
-        
-        print("Press enter to return") ; let _ = readLine()
-        
-        
-    default:
-        
-        print("404")
         
     }
     
@@ -91,6 +104,7 @@ func sendToAnotherAccount() {
         print("||                                               ||")
         print("||             Not enough funds 😭               ||")
         print("||                                               ||")
+        print("||            Press enter to return              ||")
         print("===================================================")
         
     } else {
@@ -101,11 +115,15 @@ func sendToAnotherAccount() {
         print("|| * Recipient Name: \(accountName)              ||")
         print("|| * Account Number: \(accountNumber)            ||")
         print("|| * Bank: \(bankNumber)                         ||")
+        print("||                                               ||")
+        print("||             Press enter to return             ||")
         print("===================================================")
         
         myUser.funds -= amount
         
     }
+    
+    let _ = readLine()
     
     
     
@@ -125,6 +143,7 @@ func sendToFriendAccount(_ account: GenericAccount) {
         print("||                                               ||")
         print("||             Not enough funds 😭               ||")
         print("||                                               ||")
+        print("||             Press enter to return             ||")
         print("===================================================")
         
     } else {
@@ -135,95 +154,75 @@ func sendToFriendAccount(_ account: GenericAccount) {
         print("|| * Recipient Name: \(account.username)         ||")
         print("|| * Account Number: \(account.account)          ||")
         print("|| * Bank: \(account.bankNumber)                 ||")
+        print("||                                               ||")
+        print("||             Press enter to return             ||")
         print("===================================================")
     
         myUser.funds -= amount
     
     }
     
+    let _ = readLine()
+    
 }
 
 func transfer() {
     
-    print("===================================================")
-    print("||                                               ||")
-    print("||            Choose transfer method             ||")
-    print("||                                               ||")
-    print("|| (1) * [Read QR Code]                          ||")
-    print("|| (2) * [Send to another account]               ||")
-    print("||                                               ||")
-    print("|| # Registered Accounts #                       ||")
-    printRegisteredAccounts()
-    print("||                                               ||")
-    print("===================================================")
+    var terminate = false
     
-    let response = Int(readLine() ?? "-1")
+    while !terminate {
     
-    switch(response) {
-        
-    case 1:
-        
         print("===================================================")
         print("||                                               ||")
-        print("||                 ((()))())                     ||")
-        print("||                 |       |                     ||")
-        print("||               👂|👁   👁|👂                   ||")
-        print("||                 |   👃  |                     ||")
-        print("||          👋     \\   👄  /       🤙           ||")
+        print("||            Choose transfer method             ||")
+        print("||                                               ||")
+        print("|| (1) * [Read QR Code]                          ||")
+        print("|| (2) * [Send to another account]               ||")
+        print("||                                               ||")
+        print("|| # Registered Accounts #                       ||")
+        printRegisteredAccounts()
+        print("||                                               ||")
+        print("||             Press enter to return             ||")
         print("===================================================")
         
-    case 2:
+        let response = Int(readLine() ?? "-1")
         
-        sendToAnotherAccount()
-        
-    default:
-        
-        let index = (response ?? 3) - 3
-        
-        if (0 ..< myUser.friendAccounts.count).contains(index) {
+        switch response  {
             
-            sendToFriendAccount(myUser.friendAccounts[index])
+        case 1:
+            
+            print("===================================================")
+            print("||                                               ||")
+            print("||                 ((()))())                     ||")
+            print("||                 |       |                     ||")
+            print("||               👂|👁   👁|👂                   ||")
+            print("||                 |   👃  |                     ||")
+            print("||          👋     \\   👄  /       🤙           ||")
+            print("===================================================")
+            
+            let _ = readLine()
+            
+        case 2:
+            
+            sendToAnotherAccount()
+            
+        default:
+            
+            let index = (response ?? 3) - 3
+            
+            if (0 ..< myUser.friendAccounts.count).contains(index) {
+                
+                sendToFriendAccount(myUser.friendAccounts[index])
+                
+            } else { terminate = true }
             
         }
         
     }
     
-    print("Press enter to return") ; let _ = readLine()
-    
 }
 
-func adjustLimit() {
-    
-    
-    print("===================================================")
-    print("||               Limit adjust                    ||")
-    print("||                                               ||")
-    print("||                                               ||")
-    print("||                 $350,00                       ||")
-    print("||               $210,50 available               ||")
-    print("||                                               ||")
-    print("||                                               ||")
-    print("||    200                       350        400   ||")
-    print("||   (----------------------------*          )   ||")
-    print("||                                               ||")
-    print("||                                               ||")
-    print("||   1.      Ask for limit increase   >          ||")
-    print("||                                               ||")
-    print("||   0.              Return           >          ||")
-    print("===================================================")
-   
-    let response = Int(readLine() ?? "-1")
-    
-    switch response {
-    case 0:
-        startScreen()
-    case 1:
-        increaseLimit()
-    default:
-        print("Default")
-    }
-}
-
+// Adjust Limit Stuff
 func increaseLimit(){
     
     print("Tell us your new max limit")
@@ -247,7 +246,42 @@ func increaseLimit(){
     print("||                                               ||")
     print("||   2.              Adjust           >          ||")
     print("===================================================")
+    
+}
 
+func adjustLimit() {
+    
+    var terminate = false
+    
+    while !terminate {
+    
+        print("===================================================")
+        print("||                Adjust limit                   ||")
+        print("||                                               ||")
+        print("||                                               ||")
+        print("||                 $350,00                       ||")
+        print("||             $210,50 available                 ||")
+        print("||                                               ||")
+        print("||                                               ||")
+        print("||    200                       350        400   ||")
+        print("||   (----------------------------*          )   ||")
+        print("||                                               ||")
+        print("||                                               ||")
+        print("||   (1) * [Ask for limit increase]              ||")
+        print("||                                               ||")
+        print("||             Press enter to return             ||")
+        print("===================================================")
+       
+        let response = Int(readLine() ?? "-1")
+        
+        switch response {
+                        
+        case 1: increaseLimit()
+            
+        default: terminate = false
+            
+        }
+    }
     
 }
 
