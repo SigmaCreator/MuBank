@@ -88,17 +88,26 @@ class MuAccount : GenericAccount {
     
     func recentlyBought(){
         
+        print("===================================================")
+        
         print("         ^")
-        print("        / \\ ")
-        print("     __/   \\__/ ")
+        print("        / \\       /\\")
+        print("     __/   \\__/\\/  \\____________")
         
-        print("Restaurant:           MAR 13")
-        print("  PizzaHut")
-        print("  $21,50   \n")
+        print("===================================================")
+
         
-        print("Supermarket:          FEV 18")
-        print("  Walmart")
-        print("  #118,92")
+        purchases.forEach {
+            
+            print("||   |                                           ||")
+            print("||   \($0.kind) * $\($0.value) : \($0.name) \($0.date) ||")
+            print("||   |                                           ||")
+
+            
+        }
+        
+        print("===================================================")
+
         
     }
     
