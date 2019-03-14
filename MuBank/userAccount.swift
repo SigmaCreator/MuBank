@@ -42,34 +42,24 @@ class MuAccount : GenericAccount {
         
     }
     
-    func configureMuAccount(){
-        
-        for _ in 0 ..< 15 { print("") }
-        
-        print("Receive Salary               >")
-        print("Cancel MuAccount             >")
-        
-    }
-    
-    func configureCard(){
-        
-        for _ in 0 ..< 15 { print("") }
-        
-        print("Invoice Maturity:               08/04      >")
-        print("Ajust limit:                    $400,00    >")
-        print("Information about your bank interets: 14%  >")
-        print("Travel alert:                    ON")
-    
-    }
-    
     func configureApp(){
         
-        for _ in 0 ..< 15 { print("") }
+        print("===================================================")
+        print("|| Location history                     ON       ||")
+        print("|| Travel alert:                        ON       ||")
+        print("||                                               ||")
+        print("|| App protection                       ON       ||")
+        print("||  Ask for the password when openning the app:  ||")
+        print("||                                               ||")
+        print("|| Invoice Maturity:                 08/04     > ||")
+        print("|| Ajust limit:                      $400,00   > ||")
+        print("|| Information about your bank interets: 14%   > ||")
+        print("||                                               ||")
+        print("||                                               ||")
+        print("|| Press enter to return                         ||")
+        print("===================================================")
         
-        print("Localization history                                  ON")
-        print("App protection")
-        print("Ask for the user password when openning the app:      ON")
-        
+        let _ = readLine()
     }
     
     func recentlyBought(){
