@@ -52,7 +52,7 @@ func startScreen() {
         
         switch(response) {
             
-        case 1: deposit()
+        case 1: myUser.recentlyBought() // deposit()
             
         case 2: transfer()
             
@@ -67,6 +67,12 @@ func startScreen() {
     }
 
 }
+
+let pOne = Purchase(name: "Mercado Silva", value: 3.50, date: "MAR 14", kind: .GroceryStore)
+let pTwo = Purchase(name: "Zaffari", value: 120.0, date: "FEV 18", kind: .Supermarket)
+let pThree = Purchase(name: "Pizza Hut", value: 37.0, date: "APR 17", kind: .Restaurant)
+
+myUser.purchases = [pOne,pTwo,pThree]
 
 startScreen()
 

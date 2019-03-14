@@ -80,7 +80,7 @@ class MuAccount : GenericAccount {
         print("|| Information about your bank interets: 14%   > ||")
         print("||                                               ||")
         print("||                                               ||")
-        print("|| Press enter to return                         ||")
+        print("||          Press enter to return                ||")
         print("===================================================")
         
         let _ = readLine()
@@ -90,23 +90,28 @@ class MuAccount : GenericAccount {
         
         print("===================================================")
         
-        print("         ^")
-        print("        / \\       /\\")
-        print("     __/   \\__/\\/  \\____________")
+        print("||         ^                                     ||")
+        print("||        / \\      /\\                            ||")
+        print("||     __/   \\__/\\/  \\____________               ||")
         
-        print("===================================================")
-
+        print("||                                               ||")
+        print("||   *                                           ||")
+        
         
         purchases.forEach {
             
             print("||   |                                           ||")
-            print("||   \($0.kind) * $\($0.value) : \($0.name) \($0.date) ||")
+            print("||  [\($0.kind.rawValue)]  *  $\($0.value) : \($0.name) - \($0.date)")
             print("||   |                                           ||")
+            
 
             
         }
         
+        print("||          Press enter to return                ||")
         print("===================================================")
+        
+        let _ = readLine()
 
         
     }
