@@ -1,5 +1,16 @@
 import Foundation
 
+enum purchaseKind {
+    
+    case Restaurant
+    case Supermarket
+    
+}
+
+class purchase {
+    
+    
+}
 
 class GenericAccount {
     
@@ -63,8 +74,6 @@ class MuAccount : GenericAccount {
     }
     
     func recentlyBought(){
-        
-        for _ in 0 ..< 15 { print("") }
         
         print("         ^")
         print("        / \\ ")
