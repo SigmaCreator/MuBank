@@ -1,15 +1,15 @@
 import Foundation
 
-enum purchaseKind {
+enum purchaseKind : String {
     
-    case Restaurant
-    case Supermarket
-    case ClothShop
-    case Bakery
-    case GroceryStore
-    case ComicStore
-    case TechStore
-    case Hotel
+    case Restaurant = "🍽"
+    case Supermarket = "🛒"
+    case ClothShop = "👗"
+    case Bakery = "🥖"
+    case GroceryStore = "🥦"
+    case ComicStore = "📚"
+    case TechStore = "📱"
+    case Hotel = "🏨"
     
 }
 
