@@ -44,6 +44,7 @@ func startScreen() {
         print("|| (2) * [Transfer]                              ||")
         print("|| (3) * [Adjust credit limit]                   ||")
         print("|| (4) * [Pay]                                   ||")
+        print("|| (5) * [Purchase History]                      ||")
         print("||                                               ||")
         print("||         Press enter to close the app          ||")
         print("===================================================")
@@ -52,13 +53,15 @@ func startScreen() {
         
         switch(response) {
             
-        case 1: myUser.recentlyBought() // deposit()
+        case 1: deposit()
             
         case 2: transfer()
             
         case 3: adjustLimit()
             
         case 4: pay()
+        
+        case 5: myUser.recentlyBought()
             
         default: terminate = true
             

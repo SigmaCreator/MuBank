@@ -222,36 +222,13 @@ func transfer() {
     
 }
 
-// Adjust Limit Stuff
-func increaseLimit(){
-    
-    print("Tell us your new max limit")
-    
-    let actualLimit = 350
-    let response = Int(readLine() ?? "-1")
-    let moneyAvailable = 210 + (response! -  400)
-    
-    print("===================================================")
-    print("||               Limit adjust                    ||")
-    print("||                                               ||")
-    print("||                                               ||")
-    print("||                 $\(actualLimit),00                       ||")
-    print("||               $\(moneyAvailable),50 available               ||")
-    print("||                                               ||")
-    print("||                                               ||")
-    traceAjust(newValor: response, actualLimit: actualLimit)
-    print("||                                               ||")
-    print("||                                               ||")
-    print("||   1.      Ask for limit increase   >          ||")
-    print("||                                               ||")
-    print("||   2.              Adjust           >          ||")
-    print("===================================================")
-    
-}
-
 func adjustLimit() {
     
     var terminate = false
+    
+    let actualLimit = 350
+    var moneyAvailable = 210
+    var maxLimit = 400
     
     while !terminate {
     
@@ -259,12 +236,11 @@ func adjustLimit() {
         print("||                Adjust limit                   ||")
         print("||                                               ||")
         print("||                                               ||")
-        print("||                 $350,00                       ||")
-        print("||             $210,50 available                 ||")
+        print("||                 $\(actualLimit),00                       ||")
+        print("||             $\(moneyAvailable),50 available                 ||")
         print("||                                               ||")
         print("||                                               ||")
-        print("||    200                       350        400   ||")
-        print("||   (----------------------------*          )   ||")
+        traceAjust(newValor: maxLimit, actualLimit: actualLimit)
         print("||                                               ||")
         print("||                                               ||")
         print("||   (1) * [Ask for limit increase]              ||")
@@ -276,7 +252,10 @@ func adjustLimit() {
         
         switch response {
                         
-        case 1: increaseLimit()
+        case 1:
+            print("Tell us your new max limit")
+            maxLimit = Int(readLine() ?? "-1")!
+            moneyAvailable += maxLimit  - 400
             
         default: terminate = true
             
