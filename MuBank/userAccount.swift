@@ -13,6 +13,15 @@ enum purchaseKind {
     
 }
 
+struct Purchase {
+    
+    let name: String
+    let value: Double
+    let date: String
+    let kind: purchaseKind
+    
+}
+
 
 
 class GenericAccount {
@@ -45,6 +54,7 @@ class MuAccount : GenericAccount {
     var funds = 0.0
     
     var friendAccounts: [GenericAccount] = []
+    var purchases: [Purchase] = []
     
     init(bankNumber: Int, username: String, agency: String, account: String, email: String, password: String, monthlyIncome: Int) {
         
