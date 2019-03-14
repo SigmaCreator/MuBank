@@ -4,13 +4,16 @@ enum purchaseKind {
     
     case Restaurant
     case Supermarket
+    case ClothShop
+    case Bakery
+    case GroceryStore
+    case ComicStore
+    case TechStore
+    case Hotel
     
 }
 
-class purchase {
-    
-    
-}
+
 
 class GenericAccount {
     
