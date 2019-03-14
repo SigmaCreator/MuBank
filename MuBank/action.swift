@@ -278,7 +278,7 @@ func adjustLimit() {
                         
         case 1: increaseLimit()
             
-        default: terminate = false
+        default: terminate = true
             
         }
     }
