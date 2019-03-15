@@ -1,14 +1,7 @@
-//
-//  main.swift
-//  MuBank
-//
-//  Created by Rovane Moura on 12/03/19.
-//  Copyright © 2019 MuBank. All rights reserved.
-//
 
 import Foundation
 
-func upperMenu(){
+func upperMenu() {
     
     print("===================================================")
     print("||                --------------                 ||")
@@ -28,7 +21,7 @@ func startScreen() {
     
     var terminate = false
     
-    while(!terminate) {
+    while !terminate {
     
         upperMenu()
     
@@ -45,13 +38,14 @@ func startScreen() {
         print("|| (3) * [Adjust credit limit]                   ||")
         print("|| (4) * [Pay]                                   ||")
         print("|| (5) * [Purchase History]                      ||")
+        print("|| (6) * [Configuration]                         ||")
         print("||                                               ||")
         print("||         Press enter to close the app          ||")
         print("===================================================")
     
         let response = Int(readLine() ?? "-1")
         
-        switch(response) {
+        switch response  {
             
         case 1: deposit()
             
@@ -62,6 +56,8 @@ func startScreen() {
         case 4: pay()
         
         case 5: myUser.recentlyBought()
+            
+        case 6: myUser.configureApp()
             
         default: terminate = true
             
